@@ -3,7 +3,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-get_header();
+// Load the default header template part so block themes render nav and styles.
+include plugin_dir_path( __FILE__ ) . 'template-parts/header.php';
+echo do_blocks( '<!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->' );
 
 $paged = max( 1, get_query_var( 'paged', 1 ) );
 $query = new WP_Query(
@@ -66,5 +68,7 @@ $query = new WP_Query(
 </main>
 </div>
 <?php
-get_footer();
+// Load the default footer template part.
+echo do_blocks( '<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->' );
+include plugin_dir_path( __FILE__ ) . 'template-parts/footer.php';
 ?>
