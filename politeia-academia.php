@@ -44,12 +44,4 @@ add_action( 'plugins_loaded', function () {
     ( new \Politeia\Academia\Core\Plugin() )->boot();
 } );
 
-add_action( 'wp_enqueue_scripts', function () {
-    wp_enqueue_style(
-        'polilms-frontend',
-        plugins_url( 'assets/css/frontend.css', POLIAC_FILE ),
-        [],
-        '0.1.0'
-    );
-} );
 
