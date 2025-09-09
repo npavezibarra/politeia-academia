@@ -22,13 +22,7 @@ if ( file_exists( POLIAC_DIR . 'vendor/autoload.php' ) ) {
     require POLIAC_DIR . 'vendor/autoload.php';
 }
 
-register_activation_hook( __FILE__, function () {
-    \Politeia\Academia\Core\Activator::activate();
-} );
-
-register_uninstall_hook( __FILE__, function () {
-    // keep user data by default; provide setting to remove on uninstall
-} );
+register_activation_hook( __FILE__, [ \Politeia\Academia\Core\Activator::class, 'activate' ] );
 
 add_action( 'plugins_loaded', function () {
     ( new \Politeia\Academia\Core\Plugin() )->boot();
