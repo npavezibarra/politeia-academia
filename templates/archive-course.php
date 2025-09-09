@@ -1,17 +1,22 @@
 <?php
-if (!defined('ABSPATH')) exit;
+if (! defined('ABSPATH')) {
+    exit;
+}
+
 get_header();
 
 $paged = max(1, get_query_var('paged', 1));
 $query = new WP_Query([
-  'post_type'      => 'course',
-  'post_status'    => 'publish',
-  'posts_per_page' => 12,
-  'paged'          => $paged,
+    'post_type'      => 'course',
+    'post_status'    => 'publish',
+    'posts_per_page' => 12,
+    'paged'          => $paged,
 ]);
 
 ?>
-<main id="polilms-courses-archive" class="polilms-wrap bb-grid">
+
+<div id="primary" class="content-area">
+<main id="polilms-courses-archive" class="site-main polilms-wrap bb-grid">
   <header class="polilms-header">
     <h1 class="entry-title"><?php esc_html_e('Courses','politeia-academia'); ?></h1>
   </header>
@@ -57,6 +62,7 @@ $query = new WP_Query([
     <p><?php esc_html_e('No courses found.','politeia-academia'); ?></p>
   <?php endif; ?>
 </main>
+</div>
 
 <style>
 /* minimal, theme-friendly */
