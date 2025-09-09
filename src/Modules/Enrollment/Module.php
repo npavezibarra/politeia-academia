@@ -17,7 +17,7 @@ class Module implements ModuleContract {
     }
 
     public function migrations(): array {
-        return [ Migrations\Init_2025_09_09_000003_enrollments_progress::class ];
+        return [ Migrations\EnrollmentsProgress::class ];
     }
 
     public static function enroll_user(int $user_id, int $course_id, string $source = 'manual', ?string $ref = null): bool {

@@ -24,10 +24,10 @@ politeia-academia/
 │  │          Contracts/{Module.php,Migration.php}
 │  │          Migrations/MigrationRunner.php
 │  └─ Modules/
-│     ├─ Courses/{Module.php, Migrations/2025_09_09_000001_init.php}
-│     ├─ Lessons/{Module.php, Migrations/2025_09_09_000002_init.php}
-│     ├─ Enrollment/{Module.php, Migrations/2025_09_09_000003_enrollments_progress.php}
-│     ├─ Quizzes/{Module.php, Migrations/2025_09_09_000004_quizzes_attempts.php}
+│     ├─ Courses/{Module.php, Migrations/Init.php}
+│     ├─ Lessons/{Module.php, Migrations/Init.php}
+│     ├─ Enrollment/{Module.php, Migrations/EnrollmentsProgress.php}
+│     ├─ Quizzes/{Module.php, Migrations/QuizzesAttempts.php}
 │     ├─ WooCommerce/Module.php
 │     ├─ BuddyBoss/Module.php
 │     ├─ REST/Module.php

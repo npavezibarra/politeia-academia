@@ -18,7 +18,7 @@ class Module implements ModuleContract {
     }
 
     public function migrations(): array {
-        return [ Migrations\Init_2025_09_09_000002::class ];
+        return [ Migrations\Init::class ];
     }
 
     public function register_cpt(): void {

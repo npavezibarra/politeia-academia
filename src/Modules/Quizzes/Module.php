@@ -16,7 +16,7 @@ class Module implements ModuleContract {
     }
 
     public function migrations(): array {
-        return [ Migrations\Init_2025_09_09_000004_quizzes_attempts::class ];
+        return [ Migrations\QuizzesAttempts::class ];
     }
 
     public function render_quiz_shortcode( $atts, $content = '' ): string {

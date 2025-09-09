@@ -4,7 +4,11 @@ namespace Politeia\Academia\Modules\Enrollment\Migrations;
 use Politeia\Academia\Core\Contracts\Migration;
 use Politeia\Academia\Core\Helpers\DB;
 
-class Init_2025_09_09_000003_enrollments_progress implements Migration {
+class EnrollmentsProgress implements Migration {
+    public static function version(): string {
+        return '2025_09_09_000003';
+    }
+
     public function up(): void {
         global $wpdb;
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
