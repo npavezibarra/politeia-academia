@@ -1,8 +1,18 @@
 <?php
-if (! defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-if (function_exists('wp_is_block_theme') && wp_is_block_theme() && function_exists('block_header_area')) {
+
+if ( function_exists( 'wp_is_block_theme' ) && wp_is_block_theme() && function_exists( 'block_header_area' ) ) {
+    ?>
+    <!DOCTYPE html>
+    <html <?php language_attributes(); ?>>
+    <head>
+    <?php wp_head(); ?>
+    </head>
+    <body <?php body_class(); ?>>
+    <?php
+    wp_body_open();
     block_header_area();
 } else {
     get_header();
@@ -78,8 +88,13 @@ $query = new WP_Query([
 .polilms-card-cta .button{display:inline-block}
 </style>
 <?php
-if (function_exists('wp_is_block_theme') && wp_is_block_theme() && function_exists('block_footer_area')) {
+if ( function_exists( 'wp_is_block_theme' ) && wp_is_block_theme() && function_exists( 'block_footer_area' ) ) {
     block_footer_area();
+    wp_footer();
+    ?>
+    </body>
+    </html>
+    <?php
 } else {
     get_footer();
 }
