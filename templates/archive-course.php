@@ -17,25 +17,24 @@ $query = new WP_Query(
     ]
 );
 ?>
-<div id="primary" class="content-area">
-<main id="polilms-courses-archive" class="site-main polilms-wrap bb-grid">
+<main id="polilms-courses-archive" class="site-main polilms-wrap bb-grid wp-block-group alignwide">
   <header class="polilms-header">
-    <h1 class="entry-title"><?php esc_html_e( 'Courses', 'politeia-academia' ); ?></h1>
+    <h1 class="entry-title wp-block-heading"><?php esc_html_e( 'Courses', 'politeia-academia' ); ?></h1>
   </header>
 
   <?php if ( $query->have_posts() ) : ?>
-    <div class="polilms-course-grid">
+    <div class="polilms-course-grid wp-block-post-template">
       <?php while ( $query->have_posts() ) : $query->the_post();
         $course_id  = get_the_ID();
         $visibility = get_post_meta( $course_id, '_polilms_visibility', true ) ?: 'open_registered';
         $product_id = (int) get_post_meta( $course_id, '_polilms_wc_product_id', true );
         $thumb      = get_the_post_thumbnail( $course_id, 'medium', [ 'class' => 'polilms-thumb' ] );
       ?>
-      <article <?php post_class( 'polilms-course-card' ); ?>>
+      <article <?php post_class( 'polilms-course-card wp-block-post' ); ?>>
         <a class="polilms-card-media" href="<?php the_permalink(); ?>"><?php echo $thumb ? : ''; ?></a>
         <div class="polilms-card-body">
-          <h2 class="polilms-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-          <div class="polilms-card-excerpt"><?php the_excerpt(); ?></div>
+          <h2 class="polilms-card-title wp-block-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+          <div class="polilms-card-excerpt wp-block-post-excerpt"><?php the_excerpt(); ?></div>
           <div class="polilms-card-cta">
             <?php if ( $visibility === 'closed_paid' && $product_id ) : ?>
               <a class="button" href="<?php echo esc_url( get_permalink( $product_id ) ); ?>">
@@ -66,7 +65,6 @@ $query = new WP_Query(
     <p><?php esc_html_e( 'No courses found.', 'politeia-academia' ); ?></p>
   <?php endif; ?>
 </main>
-</div>
 <?php
 // Load the default footer template part.
 echo do_blocks( '<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->' );
