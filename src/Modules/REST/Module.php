@@ -55,7 +55,7 @@ class Module implements ModuleContract {
     }
 
     public function get_courses( $request ) {
-        $courses = get_posts( [ 'post_type' => 'polilms_course', 'numberposts' => -1 ] );
+        $courses = get_posts( [ 'post_type' => 'course', 'numberposts' => -1 ] );
         $data = [];
         foreach ( $courses as $course ) {
             $lessons = get_posts( [ 'post_type' => 'polilms_lesson', 'numberposts' => -1, 'meta_key' => '_polilms_course_id', 'meta_value' => $course->ID ] );

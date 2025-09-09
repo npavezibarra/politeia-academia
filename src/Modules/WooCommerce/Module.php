@@ -35,7 +35,7 @@ class Module implements ModuleContract {
     public function render_product_meta_box( $post ): void {
         wp_nonce_field( 'polilms_product_course', 'polilms_product_course_nonce' );
         $course_id = get_post_meta( $post->ID, '_polilms_course_id', true );
-        $courses = get_posts( [ 'post_type' => 'polilms_course', 'numberposts' => -1 ] );
+        $courses = get_posts( [ 'post_type' => 'course', 'numberposts' => -1 ] );
         echo '<select name="polilms_course_id" id="polilms_course_id">';
         echo '<option value="">' . esc_html__( 'None', 'politeia-academia' ) . '</option>';
         foreach ( $courses as $course ) {

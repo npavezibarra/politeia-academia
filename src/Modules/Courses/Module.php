@@ -13,8 +13,8 @@ class Module implements ModuleContract {
 
     public function register(): void {
         add_action( 'init', [ $this, 'register_cpt' ] );
-        add_action( 'add_meta_boxes_polilms_course', [ $this, 'meta_box' ] );
-        add_action( 'save_post_polilms_course', [ $this, 'save_meta' ], 10, 2 );
+        add_action( 'add_meta_boxes_course', [ $this, 'meta_box' ] );
+        add_action( 'save_post_course', [ $this, 'save_meta' ], 10, 2 );
     }
 
     public function migrations(): array {
@@ -22,11 +22,13 @@ class Module implements ModuleContract {
     }
 
     public function register_cpt(): void {
-        register_post_type( 'polilms_course', [
-            'label' => __( 'Courses', 'politeia-academia' ),
+        register_post_type( 'course', [
+            'labels' => [ 'name' => __( 'Courses', 'politeia-academia' ) ],
             'public' => true,
-            'supports' => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
+            'has_archive' => 'courses',
+            'rewrite' => [ 'slug' => 'course', 'with_front' => false ],
             'show_in_rest' => true,
+            'supports' => [ 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ],
         ] );
     }
 
@@ -35,7 +37,7 @@ class Module implements ModuleContract {
             'polilms_course_meta',
             __( 'Course Settings', 'politeia-academia' ),
             [ $this, 'render_meta_box' ],
-            'polilms_course'
+            'course'
         );
     }
 

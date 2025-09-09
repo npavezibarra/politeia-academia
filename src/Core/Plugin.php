@@ -34,6 +34,13 @@ class Plugin {
                 }
             }
         }
+
+        add_action( 'init', function() {
+            if ( get_option( 'polilms_needs_rewrite_flush' ) ) {
+                flush_rewrite_rules( false );
+                delete_option( 'polilms_needs_rewrite_flush' );
+            }
+        }, 20 );
     }
 
     public function container(): ServiceContainer {
