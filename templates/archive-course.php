@@ -2,12 +2,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-?>
-<!-- HEADER -->
-<?php
-// Load the default header template part.
-include plugin_dir_path( __FILE__ ) . 'template-parts/header.php';
-echo do_blocks( '<!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->' );
+
+get_header();
 
 $paged = max( 1, get_query_var( 'paged', 1 ) );
 $query = new WP_Query(
@@ -70,7 +66,5 @@ $query = new WP_Query(
 </main>
 </div>
 <?php
-// Load the default footer template part.
-echo do_blocks( '<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->' );
-include plugin_dir_path( __FILE__ ) . 'template-parts/footer.php';
+get_footer();
 ?>
