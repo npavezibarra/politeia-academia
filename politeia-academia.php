@@ -44,3 +44,4 @@ add_action( 'plugins_loaded', function () {
     ( new \Politeia\Academia\Core\Plugin() )->boot();
 } );
 
+

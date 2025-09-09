@@ -1,0 +1,35 @@
+/* minimal, theme-friendly */
+.polilms-course-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.polilms-course-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .06);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.polilms-card-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.polilms-card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.polilms-card-title {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.polilms-card-excerpt {
+  color: #555;
+}
+.polilms-card-cta .button {
+  display: inline-block;
+}
