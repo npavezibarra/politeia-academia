@@ -15,7 +15,7 @@ define( 'POLIAC_FILE', __FILE__ );
 define( 'POLIAC_DIR', plugin_dir_path( __FILE__ ) );
 define( 'POLIAC_URL', plugin_dir_url( __FILE__ ) );
 define( 'POLIAC_DB_VERSION_OPTION', 'politeia_academia_db_version' ); // global db version
-define( 'POLIAC_TABLE_PREFIX', $GLOBALS['wpdb']->prefix . 'politeia_lms_' ); // wp_ → wp_politeia_lms_*
+define( 'POLIAC_TABLE_PREFIX', $GLOBALS['wpdb']->prefix . 'politeia_lms_' ); // wp_ -> wp_politeia_lms_*
 
 // Composer or PSR-4 fallback
 if ( file_exists( POLIAC_DIR . 'vendor/autoload.php' ) ) {

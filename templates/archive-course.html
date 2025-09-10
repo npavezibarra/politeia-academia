@@ -1,22 +1,24 @@
+<div class="wp-site-blocks">
 <!-- wp:template-part {"slug":"header","area":"header"} /-->
 
 <!-- wp:group {"tagName":"main","className":"has-global-padding","layout":{"type":"constrained"}} -->
-<!-- wp:heading {"level":1} -->Courses<!-- /wp:heading -->
+    <!-- wp:heading {"level":1} -->Courses<!-- /wp:heading -->
 
-<!-- wp:query {"query":{"postType":"course","perPage":9,"inherit":false,"order":"desc","orderBy":"date"},"displayLayout":{"type":"flex","columns":3},"layout":{"type":"constrained"}} -->
-<!-- wp:post-template -->
-<!-- wp:group {"className":"course-card","layout":{"type":"constrained"}} -->
-<!-- wp:post-title {"level":2,"isLink":true,"className":"course-card__title"} /-->
-<!-- wp:read-more {"content":"View course","className":"course-card__cta"} /-->
-<!-- /wp:group -->
-<!-- /wp:post-template -->
+    <!-- wp:query {"query":{"postType":"course","perPage":9,"inherit":false,"order":"desc","orderBy":"date"},"displayLayout":{"type":"flex","columns":3},"layout":{"type":"constrained"}} -->
+        <!-- wp:post-template -->
+            <!-- wp:group {"className":"course-card","layout":{"type":"constrained"}} -->
+                <!-- wp:post-title {"level":2,"isLink":true,"className":"course-card__title"} /-->
+                <!-- wp:read-more {"content":"View course","className":"course-card__cta"} /-->
+            <!-- /wp:group -->
+        <!-- /wp:post-template -->
 
-<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"},"className":"pagination-wrap"} -->
-<!-- wp:query-pagination-previous /-->
-<!-- wp:query-pagination-numbers /-->
-<!-- wp:query-pagination-next /-->
-<!-- /wp:query-pagination -->
-<!-- /wp:query -->
+        <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"},"className":"pagination-wrap"} -->
+            <!-- wp:query-pagination-previous /-->
+            <!-- wp:query-pagination-numbers /-->
+            <!-- wp:query-pagination-next /-->
+        <!-- /wp:query-pagination -->
+    <!-- /wp:query -->
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","area":"footer"} /-->
+</div>
