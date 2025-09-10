@@ -169,11 +169,11 @@ Provide equivalent Gutenberg blocks (optional if time): server-rendered blocks w
 
 Keep templates/single-lesson.php minimal; inject gate UI when no access.
 
-Add templates/single-course.php:
+Add templates/single-course.html:
 
 Show course summary, lessons list, progress %, and CTA according to visibility.
 
-Allow overrides at /wp-content/politeia-academia/{single-lesson.php, single-course.php, quiz.php} (already set for lesson & quiz; add filter for course).
+Allow overrides at /wp-content/politeia-academia/{single-lesson.php, single-course.html, quiz.php} (already set for lesson & quiz; add filter for course).
 
 Add partial templates/parts/gate.php.
 
